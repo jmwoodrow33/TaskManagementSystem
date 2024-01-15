@@ -11,6 +11,7 @@ git clone https://github.com/jmwoodrow33/Task-Management-Application.git
 
 ## Prerequisites
 Before running the project, ensure you have the following installed:
+- JavaScript
 - [Node.js](https://nodejs.org/en)
 
 ## Installation
@@ -28,8 +29,9 @@ MONGODB_URI=<your_mongodb_uri>
 
 ## Running the Server
 To start the server, run the following command in the terminal while in the server directory:
+```sh
 node app.js
-
+```
 
 ## Usage
 After starting the server, open your web browser and navigate to `http://localhost:3000` to access the task management dashboard.
