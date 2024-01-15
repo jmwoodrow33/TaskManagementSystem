@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="landingPage" class="view">
+        <h1>Welcome to the Task Management Dashboard!</h1>
+        <button id="enterButton">Enter</button>
+    </div>
+
+    <div id="dashboard" class="view" style="display:none;">
+        <h1>Dashboard</h1>
+        <button id = "buttonOptions" onclick="showView('tasksView')">Tasks</button>
+        <button id = "buttonOptions" onclick="showView('teamsView')">Teams</button>
+        <button id = "buttonOptions" onclick="showView('usersView')">Users</button>
+    </div>
+
+<!-- TASKS -->
+
+    <div id="tasksView" class="view" style="display:none;">
+        <h1>Tasks</h1>
+        <button id = "buttonOptions" onclick="showView('dashboard')">Back to Dashboard</button>
+        <button id = "buttonOptions" onclick="showCreateTaskForm()">Create New Task</button>
+        <button id = "buttonOptions" onclick="fetchAndDisplayTasks()">View Tasks</button>
+        
+        <div id="createTaskForm" style="display:none;">
+            <input type="hidden" id="taskFormMode" value="add"> 
+            <input type="hidden" id="currentTaskId">
+
+            <input type="text" id="newTaskTitle" placeholder="Task Title" required>
+            <textarea id="newTaskDescription" placeholder="Task Description"></textarea>
+            <input type="date" id="newTaskDeadline" required>
+            
+            <select id="newTaskPriority" required>
+                <option value="">Select Priority</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            
+            <select id="newTaskStatus" required>
+                <option value="">Select Status</option>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            
+            <select id="newTaskTeam" required>
+                <option value="">Select Team</option>
+                <!-- Team options will be populated here -->
+            </select>
+            
+            <button id="taskFormSubmitButton" onclick="submitTaskForm()">Submit New Task</button>
+        </div>
+        
+        <div id="tasksList" style="display:none;">
+            <!-- Tasks will be listed here -->
+        </div>
+    </div>
+    
+<!-- TEAMS -->
+
+    <div id="teamsView" class="view" style="display:none;">
+        <h1>Teams</h1>
+        <button id="buttonOptions" onclick="showView('dashboard')">Back to Dashboard</button>
+        <button id="buttonOptions" onclick="showCreateTeamForm()">Create/Add New Team</button>
+        <button id="buttonOptions" onclick="fetchAndDisplayTeams()">View Teams</button>
+    
+        <div id="createTeamForm" style="display:none;">
+            <input type="hidden" id="teamFormMode" value="add">
+            <input type="hidden" id="currentTeamId">
+        
+            <input type="text" id="newTeamName" placeholder="Team Name">
+            <textarea id="newTeamDescription" placeholder="Team Description"></textarea>
+        
+            <select id="teamMembers" multiple required>
+                <option value="">Select Users</option>
+                <!-- User options will be populated here by the fetchAndPopulateUsers() function -->
+            </select>
+            
+            <button id="teamFormSubmitButton" onclick="submitTeamForm()">Submit New Team</button>
+        </div>
+        
+    
+        <div id="teamsList" style="display:none;">
+            <!-- Teams will be listed here -->
+        </div>
+    </div>
+
+<!-- USERS/MEMBERS -->
+
+    <div id="usersView" class="view" style="display:none;">
+        <h1>Users</h1>
+        <button id="buttonOptions" onclick="showView('dashboard')">Back to Dashboard</button>
+        <button id="buttonOptions" onclick="showCreateUserForm()">Create New User</button>
+        <button id="buttonOptions" onclick="fetchAndDisplayUsers()">View Users</button>
+
+        <div id="createUserForm" style="display:none;">
+            <input type="hidden" id="userFormMode" value="add">
+            <input type="hidden" id="currentUserId">
+        
+            <input type="text" id="userName" placeholder="User Name">
+
+            <button id="userFormSubmitButton" onclick="submitUserForm()">Submit User</button>
+        </div>
+        
+        
+        <div id="usersList">
+            <!-- Users will be listed here -->
+        </div>
+        
+    </div>
+    
+
+</body>
+<script src="/js/app.js"></script>
+</html>
+
+
+
+

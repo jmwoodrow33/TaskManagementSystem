@@ -1,0 +1,53 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    background-color: grey;
+}
+
+#landingPage {
+    text-align: center;
+    padding-top: 20%;
+}
+
+#enterButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+#dashboard {
+    text-align: center;
+
+}
+
+#buttonOptions {
+    background-color: #4CAF50;
+    color: white;
+    width:80px;
+    height: 50px;
+}
+
+#tasksView {
+    text-align: center;
+
+}
+
+#teamsView {
+    text-align: center;
+}
+
+#usersView {
+    text-align: center;
+}
