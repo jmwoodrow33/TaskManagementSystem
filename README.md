@@ -36,6 +36,8 @@ node app.js
 ## Usage
 After starting the server, open your web browser and navigate to `http://localhost:3000` to access the task management dashboard.
 
+## Contributions
+This project isn't currently open for contributions.
 
 ## Support
 For support and further instructions, refer to the official GitHub repository.
